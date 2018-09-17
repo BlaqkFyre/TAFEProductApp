@@ -35,8 +35,11 @@ namespace ProductApps
                 cProduct.calTotalPayment();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
                 // added code for part 5
-                decimal DelCharge = cProduct.TotalPayment + 25;
-                txtBlkDelivChargeTotal.Text = Convert.ToString(DelCharge);
+                decimal delCharge = cProduct.TotalPayment + 25;
+                txtBlkDelivChargeTotal.Text = Convert.ToString(delCharge);
+                // added code for part 6
+                decimal wrapCharge = delCharge + 5;
+                txtBlkWrapCostCharge.Text = Convert.ToString(wrapCharge);
             }
             catch (FormatException)
             {
@@ -52,6 +55,8 @@ namespace ProductApps
             totalPaymentTextBlock.Text = "";
             // added code for part 5
             txtBlkDelivChargeTotal.Text = "";
+            // added code for part 6
+            txtBlkWrapCostCharge.Text = "";
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
